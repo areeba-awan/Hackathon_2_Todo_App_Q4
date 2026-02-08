@@ -5,7 +5,7 @@ import os
 
 class Settings(BaseSettings):
     # Database settings
-    DATABASE_URL: str = "sqlite:///./todo_app.db"
+    DATABASE_URL: str = "sqlite:///./todo_app.db"  # Use relative path for Hugging Face compatibility
 
     # Auth settings
     SECRET_KEY: str = "dev-secret-key-change-in-production"

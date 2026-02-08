@@ -39,6 +39,7 @@ async def lifespan(app: FastAPI):
     # Startup
     logger.info("Initializing database...")
     try:
+        # Don't use asyncio.run() here since we're already in an async context
         await create_db_and_tables(engine)
         logger.info("Database initialized successfully")
     except Exception as e:
